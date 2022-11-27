@@ -31,9 +31,9 @@ void PrintArray(double[] array)
     Console.WriteLine("]");
 }
 
-double SumMinMaxElem(double[] array) //ворачиваем суммы
+double DifferenceMaxMinElem(double[] array) //ворачиваем суммы
 {
-    double sum = 0;
+    double difference = 0;
     double min = array[0];
     double max = array[0];
     for (int i = 0; i < array.Length; i++)
@@ -43,15 +43,15 @@ double SumMinMaxElem(double[] array) //ворачиваем суммы
 
         if (array[i] > max)
             max = array[i];
-        sum = min + max;
-        sum = Math.Round(sum, 1);
+        difference = max - min;
+        difference = Math.Round(difference, 1);
     }
 
-    return sum;
+    return difference;
 }
 
 // return округлить методом Math.Round()
 double[] arr = CreateArrayRndDouble(5, -5, 5);
 PrintArray(arr);
-double summinmaxelem = SumMinMaxElem(arr);
-Console.WriteLine($"Сумма min и max элементов массива = {summinmaxelem}");
+double differencemaxminelem = DifferenceMaxMinElem(arr);
+Console.WriteLine($"Сумма min и max элементов массива = {differencemaxminelem}");
